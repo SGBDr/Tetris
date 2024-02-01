@@ -10,7 +10,7 @@ public class tetrisMain {
 		AppGameContainer app = new AppGameContainer(new Tetris("Tetris"));
 		app.setTargetFrameRate(60);
 		app.setShowFPS(false);
-		app.setDisplayMode(I.width, I.height, false);
+		app.setDisplayMode(I.width_h, I.height_h, false);
 		app.start();
 	}
 

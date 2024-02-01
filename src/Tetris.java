@@ -20,38 +20,32 @@ public class Tetris extends BasicGame {
 	@Override
 	public void render(GameContainer gr, Graphics arg1) throws SlickException {
 		// TODO Auto-generated method stub
-		gr.getGraphics().setBackground(Color.white);
+		gr.getGraphics().setBackground(Color.darkGray);
 		Input input = gr.getInput();
 		
-		if(System.currentTimeMillis() - sec2 >= I.timePlayer) {
+		/*if(System.currentTimeMillis() - sec2 >= I.timePlayer) {
 			if(input.isKeyDown(Input.KEY_RIGHT))scene.MoveAllPossibleRight();
 			else if(input.isKeyDown(Input.KEY_LEFT))scene.MoveAllPossibleLeft();
 			else if(input.isKeyDown(Input.KEY_ENTER))scene.rotateCase();
 			sec2 = System.currentTimeMillis();
-		}
+		}*/
 
-		if(System.currentTimeMillis() - sec >= I.timeGame & l < 5) {
-			scene.MoveAllPossibleDown();
+		if(System.currentTimeMillis() - sec >= I.timeGame) {
+			scene.moveBalls();
 			sec = System.currentTimeMillis();
-			l++;
 		}
 		//scene.verifyWin();
-		//scene.drawScene();
-		scene.drawAllCase();
-		scene.InjectObject();
+		scene.drawScene();
 	}
 
 	@Override
 	public void init(GameContainer gr) throws SlickException {
-		// TODO Auto-generated method stub
 		scene = new Scene(gr.getGraphics());
+		scene.initScene();
 		
 	}
 
 	@Override
-	public void update(GameContainer arg0, int arg1) throws SlickException {
-		// TODO Auto-generated method stub
-		
-	}
+	public void update(GameContainer arg0, int arg1) throws SlickException {}
 
 }
